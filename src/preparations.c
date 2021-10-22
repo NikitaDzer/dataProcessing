@@ -19,7 +19,7 @@ Error preparations(const char *const inputFile_path, float *const resistance, si
    size_t data_size = 0,
           index     = 0;
 
-   while (fscanf(inputFile,"%f %f", voltage + data_size, current + data_size) == 2)
+   while (fscanf(inputFile,"%f%*c%f", voltage + data_size, current + data_size) == 2)
       data_size++;
    
    for (index = 0; index < data_size; index++)

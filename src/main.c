@@ -6,7 +6,7 @@
 #include "../include/check.h"
 
 int main() {
-   const char inputFile_path[] = "../input2.txt";
+   const char inputFile_path[] = "../data.txt";
    size_t data_size = 0;
    float resistance[DATA_MAX_SIZE] = {},
          resistance_final          = 0,
