@@ -3,6 +3,6 @@
 
 #include "global.h"
 
-enum Error result (int K, float *resistance, float *resistance_final);
+Error result (int data_size, float *resistance, float *const p_resistance_final, float *const p_devitation);
 
 #endif // RESULT_H

@@ -3,6 +3,6 @@
 
 #include "global.h"
 
-enum Error preparations(const char *const inputFile_path, float *const resistance, size_t *const data_size);
+Error preparations(const char *const inputFile_path, float *const resistance, size_t *const data_size);
 
 #endif // PREPARATIONS_H

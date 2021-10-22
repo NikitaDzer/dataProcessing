@@ -1,17 +1,13 @@
-//
-// Created by User on 22.10.2021.
-//
-
-#ifndef GROUPWORK_GLOBAL_H
-#define GROUPWORK_GLOBAL_H
+#ifndef GLOBAL_H
+#define GLOBAL_H
 
 #define DATA_MAX_SIZE 100
 
-enum Error {
+typedef enum {
    NOERR,
    INPUT_PATH_NULL,
    INPUT_FILE_NOT_OPENED,
    ARGUMENT_POINTER_NULL,
-};
+} Error;
 
-#endif //GROUPWORK_GLOBAL_H
+#endif // GLOBAL_H

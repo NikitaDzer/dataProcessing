@@ -1,10 +1,10 @@
-//
-// Created by User on 22.10.2021.
-//
+#ifndef CHECK_H
+#define CHECK_H
 
-#ifndef GROUPWORK_CHECK_H
-#define GROUPWORK_CHECK_H
+#include "global.h"
 
-float check (int K, float resistance[], float resistance_final);
+Error check(const size_t data_size,
+            const float *const resistance, const float resistance_final, float *const p_meanDeviation);
 
-#endif //GROUPWORK_CHECK_H
+#endif // CHECK_H
+

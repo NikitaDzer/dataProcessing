@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../include/preparations.h"
 
-enum Error preparations(const char *const inputFile_path, float *const resistance, size_t *const p_data_size)
+Error preparations(const char *const inputFile_path, float *const resistance, size_t *const p_data_size)
 {
    if (inputFile_path == NULL)
       return INPUT_PATH_NULL;
