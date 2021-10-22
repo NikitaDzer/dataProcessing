@@ -1,6 +1,8 @@
-#ifndef PREPARATIONS_H
-#define PREPARATIONS_H
+#ifndef RESULT_H
+#define RESULT_H
 
-float result (int K, float *resistance);
+#include "global.h"
+
+enum Error result (int K, float *resistance, float *resistance_final);
 
 #endif // RESULT_H

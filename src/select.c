@@ -16,7 +16,6 @@ float Averange(int Num, float R[])
    for (i = 0; i < Num; i++)
       Sum += R[i];
    
-   printf("Averange = %f\n", Sum/Num);
    return Sum/Num;
 }
 
@@ -45,8 +44,6 @@ int DataSelect(int Num, float R[])
    for (i = 0; i < Num; i++)
       if(fabs((R[i] - averange)/averange) > 0.03)
       {
-         printf("d = %f\n",fabs((R[i] - averange)/averange));
-         
          DeletEl(&(R[i]), Num - i - 1);
          K++;
       }
@@ -61,6 +58,6 @@ void MasOut (float *a, int Size)
    
    int i = 0;
    for(i = 0; i < Size; i++)
-      printf("%.1lf  ", a[i]);
+      printf("%.5lf  ", a[i]);
    printf("\n");
 }

@@ -3,4 +3,4 @@ project(GroupWork C)
 
 set(CMAKE_C_STANDARD 90)
 
-add_executable(GroupWork src/main.c src/preparations.c include/preparations.h include/global.h src/result.c src/select.c include/select.h)
+add_executable(GroupWork src/main.c src/preparations.c include/preparations.h include/global.h src/result.c src/select.c include/select.h src/check.c include/check.h)

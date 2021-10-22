@@ -5,7 +5,6 @@
 #ifndef GROUPWORK_GLOBAL_H
 #define GROUPWORK_GLOBAL_H
 
-#define outputFile_defaultPath "../output.txt"
 #define DATA_MAX_SIZE 100
 
 enum Error {
