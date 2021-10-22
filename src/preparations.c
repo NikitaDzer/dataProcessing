@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "../include/preparations.h"
-#include "../include/global.h"
 
 enum Error preparations(const char *const inputFile_path, float *const resistance, size_t *const p_data_size)
 {
