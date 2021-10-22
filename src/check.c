@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "../include/check.h"
 
-Error check(const size_t data_size,
-            const float *const resistance, const float resistance_final, float *const p_meanDeviation)
+Error check(const float *const resistance, const size_t data_size,
+            const float resistance_final, float *const p_meanDeviation)
 {
    if (resistance == NULL || p_meanDeviation == NULL)
       return ARGUMENT_POINTER_NULL;

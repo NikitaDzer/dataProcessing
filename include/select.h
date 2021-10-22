@@ -1,7 +1,8 @@
 #ifndef SELECT_H
 #define SELECT_H
 
-int DataSelect(int Num, float R[]);
-void MasOut (float *a, int Size);
+#include "global.h"
+
+Error select(float *const resistance, size_t *const p_data_size);
 
 #endif // SELECT_H

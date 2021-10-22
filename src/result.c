@@ -2,14 +2,15 @@
 #include <math.h>
 #include "../include/result.h"
 
-Error result (int data_size, float *resistance, float *const p_resistance_final, float *const p_devitation)
+Error result(float *resistance, size_t data_size,
+             float *const p_resistance_final, float *const p_deviation)
 {
-   if (resistance == NULL || p_resistance_final == NULL || p_devitation == NULL)
+   if (resistance == NULL || p_resistance_final == NULL || p_deviation == NULL)
       return ARGUMENT_POINTER_NULL;
       
    size_t index = 0;
    float resistance_final = 0,
-         devitation       = 0,
+         deviation        = 0,
          temp             = 0,
          sum              = 0;
 
@@ -22,11 +23,11 @@ Error result (int data_size, float *resistance, float *const p_resistance_final,
       temp  = resistance[index] - resistance_final;
       sum  += temp * temp;
    }
-
-   devitation = sqrt(sum) / data_size;
+   
+   deviation = sqrt(sum) / data_size;
 
    *p_resistance_final = resistance_final * 1000;
-   *p_devitation       = devitation * 1000;
+   *p_deviation        = deviation * 1000;
 
    return NOERR;
 }

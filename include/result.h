@@ -3,6 +3,7 @@
 
 #include "global.h"
 
-Error result (int data_size, float *resistance, float *const p_resistance_final, float *const p_devitation);
+Error result(float *resistance, size_t data_size,
+             float *const p_resistance_final, float *const p_deviation);
 
 #endif // RESULT_H

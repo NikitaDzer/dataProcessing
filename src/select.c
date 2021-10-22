@@ -1,59 +1,38 @@
 #include <stdio.h>
 #include <math.h>
+#include "../include/select.h"
 
-void MasOut (float *a, int Size)
+static float calc_averange(float *const resistance, const size_t data_size)
 {
-   if(a == NULL)
-      return;
+   float sum = 0;
+   int index = 0;
    
-   int i = 0;
+   for (index = 0; index < data_size; index++)
+      sum += resistance[index];
    
-   for(i = 0; i < Size; i++)
-      printf("%.5lf  ", a[i]);
-   printf("\n");
+   return sum / data_size;
 }
 
-float Averange(int M, float R[])
+static void delete_element(float *const resistance, const size_t data_size)
 {
-   if(R == NULL)
-      return 0;
+   size_t index = 0;
+   for (index = 1; index <= data_size; index++)
+      resistance[index - 1] = resistance[index];
    
-   float Sum = 0;
-   int i = 0;
-   
-   for (i = 0; i < M; i++)
-      Sum += R[i];
-   
-   return Sum/M;
+   resistance[data_size - 1] = 0;
 }
 
-void DeletEl(float R[], int M)
+Error select(float *const resistance, size_t *const p_data_size)
 {
-   if(R == NULL)
-      return;
-   int i = 0;
+   if (resistance == NULL || p_data_size == NULL)
+      return ARGUMENT_POINTER_NULL;
    
-   for (i = 1; i <= M; i++)
-      R[i - 1] = R[i];
+   size_t index = 0;
+   float averange = calc_averange(resistance, *p_data_size);
    
-   R[M - 1] = 0;
-}
-
-int DataSelect(int M, float R[])
-{
-   if(R == NULL)
-      return 0;
+   for (index = 0; index < *p_data_size; index++)
+      if (fabs((resistance[index] - averange) / averange) > 0.03)
+         delete_element(resistance + index, (*p_data_size)-- - index);
    
-   int i = 0;
-   float averange = Averange(M, R), a = 0;
-   
-   //MasOut(R, M);
-   for (i = 0; i < M; i++)
-      if((a = fabs((R[i] - averange)/averange)) > 0.03)
-      {
-         DeletEl(&(R[i]), M - i);
-         M--;
-      }
-   
-   return M;
+   return NOERR;
 }
