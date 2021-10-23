@@ -2,7 +2,7 @@
 #include "../include/functions.h"
 
 int main() {
-   const char inputFile_path[] = "../Test4.txt";
+   const char inputFile_path[] = "../Test1.txt";
    size_t data_size = 0;
    float resistance[DATA_MAX_SIZE] = {},
          resistance_final          = 0,
