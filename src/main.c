@@ -1,9 +1,5 @@
 #include <stdio.h>
-#include "../include/global.h"
-#include "../include/preparations.h"
-#include "../include/select.h"
-#include "../include/result.h"
-#include "../include/check.h"
+#include "../include/functions.h"
 
 int main() {
    const char inputFile_path[] = "../Test4.txt";
